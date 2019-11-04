@@ -32,5 +32,3 @@ register_nav_menus(
 );
 
 add_theme_support('post-thumbnails');
-add_image_size('smallest', 240, 210, true);
-add_image_size('largest', 800, 800, true);

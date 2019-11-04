@@ -88,14 +88,20 @@ button.cta:active {
 	background-color: #C4272F;
 }
 
-ol, ol li { margin-left: 0; padding-left: 0; }
-ol { margin-left: 1.3em; }
+ol, ol li {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+ol {
+	margin-left: 1.3em;
+}
 
 section {
 	display: flex;
 	align-items: center;
 	min-height: 100vh;
-	padding: 3em;
+	padding: 5em;
 }
 
 #home, #aboutme {
@@ -106,7 +112,6 @@ section {
 	background-size: auto 100vh;
 	background-attachment: fixed;
 }
-
 
 #portfolio {
 	background-color: black;
@@ -213,6 +218,9 @@ section {
 .card {
 	box-shadow: 0 0 4em rgba(242, 72, 81, 0.05);
 	transition: all 0.3s;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	border: 0;
 }
 
 .card:hover {
@@ -229,6 +237,18 @@ section {
 	animation: 1s blinker linear infinite;
 	-webkit-animation: 1s blinker linear infinite;
 	-moz-animation: 1s blinker linear infinite;
+}
+
+.card-body {
+	padding: 0;
+}
+
+.card-title, .card-text > p {
+	margin:  1em;
+}
+
+.row {
+	text-align: center;
 }
 
 @-moz-keyframes blinker {
@@ -293,6 +313,14 @@ section {
 		-webkit-transform: translateY(-5px);
 		-ms-transform: translateY(-5px);
 		transform: translateY(-5px)
+	}
+
+}
+
+@media screen and (max-width:480px) {
+	section {
+		padding-right: 2em;
+		padding-left: 2em
 	}
 
 }

@@ -18,22 +18,22 @@
 	<div>
 		<h1>Recent Projects</h1>
 		<br>
-		<div class="card-deck">
-			<?php $the_query = new WP_Query( 'posts_per_page=8' ); ?>
+		<div class="row">
+			<?php $the_query = new WP_Query( 'posts_per_page=9' ); ?>
 			<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-				
-				<div class="card mx-2 my-2" onclick="window.location.href ='<?php the_permalink() ?>'" style="cursor: pointer;">
-					<div class="card-body">
-						<?php if (has_post_thumbnail()):?>
-							<img src="<?php the_post_thumbnail_url('smallest');?>" class="card-img-top">
-						<?php endif;?>
-						<div>
-							<h6 class="card-title"><?php the_title() ?></h6>
-							<p class="card-text"><?php the_excerpt(); ?></p>
+				<div class="col-lg-4 col-md-6 col-sm-6 py-3">
+					<div class="card mx-2 my-3 h-100" onclick="window.location.href ='<?php the_permalink() ?>'" style="cursor: pointer;">
+						<div class="card-body">
+							<?php if (has_post_thumbnail()):?>
+								<img src="<?php the_post_thumbnail_url();?>" class="card-img-top">
+							<?php endif;?>
+							<div>
+								<h6 class="card-title"><?php the_title() ?></h6>
+								<div class="card-text"><?php the_excerpt(); ?></div>
+							</div>
 						</div>
 					</div>
 				</div>
-			
 			<?php
 			endwhile;
 			wp_reset_postdata();
